@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geolocation</title>
+  <link rel="shortcut icon" type="image/png" href="C:\Users\Rajath\OneDrive\Desktop\Shyamala Files\Psd And others\Samples\Images\location.png">
+</head>
+<body>
+	<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+body{
+  color: black;
+  font-family:'Poppins', sans-serif;
+  font-weight: 100;
+}
+	</style>
+  
+<button onclick="getLocation()">You Coordinates</button>
+
+<p><strong>Plant More Trees in Your</strong></p>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+</body>
+</html>
